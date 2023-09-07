@@ -16,12 +16,45 @@
   }
 }
 
+/* Style the main scrollbar track */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #1a1d1d69;
+  /* Width of the scrollbar */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #005BA4;
+  /* Color of the thumb */
+  border-radius: 6px;
+  /* Rounded corners of the thumb */
+}
+
+
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+
+  cursor: url('/shapes/small-circle.svg'), auto;
+  height: 100vh;
+}
+
+.shadow-shap {
+  box-shadow: -0.2em -0.2em 0 .05em #005BA4;
+}
+
+input,
+textarea {
+  padding: 20px;
+}
+
+input,
+textarea::placeholder {
+  font-size: 14px;
 }
