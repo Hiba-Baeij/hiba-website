@@ -9,28 +9,28 @@ const links = [
     {
         id: "1",
         path: "/",
-        name: "home",
+        name: "Home",
         icon: FaHouse
 
     },
     {
         id: "2",
         path: "/about",
-        name: "about",
+        name: "About Me",
         icon: FaUser
 
     },
     {
         id: "3",
-        path: "/works",
-        name: "works",
+        path: "/portfolio",
+        name: "Portfolio",
         icon: FaBagShopping
 
     },
     {
         id: "4",
         path: "/contact",
-        name: "contact",
+        name: "Contact Me",
         icon: FaMessage
     }
 
@@ -47,7 +47,27 @@ export default function Navbar() {
     };
     return (
         <div>
-            <div className='shadow-shap z-40 fixed top-6 right-6 bg-dark  w-12 h-12 rounded-full flex justify-center items-center'>
+            <div>
+                <ul className='flex justify-end items-center gap-8 py-5 px-20'>
+                    {
+                        links.map((ele) => {
+                            return (
+                                <li key={ele.id} >
+
+                                    <Link href={ele.path}
+                                        style={{ fontWeight: pathname == ele.path ? 'bolder' : 'lighter', }}
+                                        className=''>
+                                        {ele.name}
+                                    </Link>
+
+                                </li>
+                            )
+
+                        })
+                    }
+                </ul>
+            </div>
+            {/* <div className='shadow-shap z-40 fixed top-6 right-6 bg-dark  w-12 h-12 rounded-full flex justify-center items-center'>
                 <Link href='/'><FaMoon size={25} /></Link>
             </div>
             <div className='z-50 fixed right-2 top-1/3 w-20 hidden md:flex justify-center items-center'>
@@ -69,7 +89,7 @@ export default function Navbar() {
                         })
                     }
                 </ul>
-            </div>
-        </div >
+            </div> */}
+        </div>
     )
 }

@@ -35,7 +35,7 @@
 }
 
 /* works */
-.works h2::after {
+/* .portfolio h2::after {
     content: "WORKS";
     color: rgb(219, 219, 219);
     opacity: 0.1;
@@ -46,4 +46,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     top: 10%;
+} */
+
+
+/* home */
+.home {
+    height: calc(100vh - 68px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

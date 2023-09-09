@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <Navbar />
         <>
-          <MouseTracker />
+          {/* <MouseTracker /> */}
           {children}
         </>
       </body>

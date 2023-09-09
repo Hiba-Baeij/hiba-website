@@ -41,8 +41,8 @@ body {
   /* overflow-y: hidden; */
   overflow-x: hidden;
 
-  cursor: url('/shapes/small-circle.svg'), auto;
-  height: 100vh;
+  /* cursor: url('/shapes/small-circle.svg'), auto;
+  height: 100vh; */
 }
 
 .shadow-shap {
