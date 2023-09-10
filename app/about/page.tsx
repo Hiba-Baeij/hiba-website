@@ -1,7 +1,7 @@
 import React from 'react'
 import PBtn from '../components/PBtn'
-import '../styles/style.css'
 import { FaDownload, FaBagShopping } from "react-icons/fa6"
+import Image from 'next/image'
 const careers = [
     {
         year: '2019',
@@ -127,15 +127,17 @@ export default function page() {
         console.log('Button clicked!');
     };
     return (
-        <div className='about relative h-screen px-40'>
-            <div className='flex justify-center items-center w-full mt-10'>
-                <h2 className='uppercase mt-14 text-4xl tracking-wider font-black'>About <span className='text-primary'>Me</span> </h2>
-            </div>
+        <div className=' relative h-screen px-40'>
+            <Image style={{ position: 'absolute', top: '-6rem', right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
+            <Image style={{ position: 'absolute', top: '3rem', left: '60%', }} width={80} height={33} src="/shapes/zigzags/zigzag-yellow.svg" alt="image-head-2" />
+            <Image style={{ position: 'absolute', right: '-15rem', top: '2rem' }} priority width={400} height={400} src="/shapes/circles/circle-blue.svg" alt="image-head-8" />
+            <Image style={{ position: 'absolute', top: '-20%', left: '-4rem' }} width={200} height={200} src="/shapes/circles/circle-small-blue.svg" alt="image-head-6" />
+
             {/* PERSONAL INFOS */}
             <div className='grid grid-cols-2 lg:mt-28 mt-48'>
                 <div className='lg:col-span-1 col-span-2 md:order-1 order-2 mt-8 md:mt-0'>
                     <h2 className='text-xl font-semibold'>PERSONAL INFOS</h2>
-                    <div className='col-span-6 flex w-full mt-12 gap-10'>
+                    <div className='col-span-6 flex w-full mt-12 gap-10 mb-10'>
                         <ul>
                             <div className='flex justify-start items-center gap-3'>
                                 <li className='opacity-60'>First Name:</li><span className='font-bold'>Hiba</span>
@@ -165,7 +167,7 @@ export default function page() {
                             </div>
                         </ul>
                     </div>
-                    <PBtn className='mt-12' onClick={handleButtonClick} text='Download CV' icon={<FaDownload size={20} />}></PBtn>
+                    <PBtn className='top-4 -left-2' border={<Image src='/shapes/ovals/oval-red.svg' height={97} width={200} alt='border' />} onClick={handleButtonClick} text='Download CV' icon={<FaDownload size={20} />}></PBtn>
 
 
                 </div>
@@ -203,32 +205,121 @@ export default function page() {
             {/* EXPERIENCE & EDUCATION */}
             <div className='mt-10'>
                 <h2 className='text-xl font-semibold text-center'>EXPERIENCE & EDUCATION</h2>
-                <div className='grid grid-cols-2 gap-10 mt-12'>
-                    {
-                        careers.map(ele => {
-                            return (
-                                <ul className="md:col-span-1 col-span-2">
+                <div className='flex justify-start items-center mt-32'>
+                    <Image width={100} height={200} src="/shapes/rectangular/education.svg" alt="image-head-2" />
+                    <div className='w-full'>
+                        <div className='flex justify-start items-center w-full'>
+                            <div className='border-2 border-dashed border-white w-[60%]'></div>
+                            <div className='border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                <article className='p-8'>
+                                    <div className='flex justify-start items-center mb-3 gap-2'>
 
-                                    <li>
-                                        <div className='flex justify-start items-start gap-5'>
-                                            <div className=" flex items-center justify-center w-10 h-10 bg-primary rounded-full -left-5">
-                                                <FaBagShopping size={20} />
-                                            </div>
-                                            <div>
-                                                <div className="bg-dark rounded-full max-w-max px-2 mb-1"><span className='text-gray-300 font-semibold' style={{ fontSize: '12px' }}>{ele.year}</span></div>
-                                                <div className='flex justify-start items-center gap-4'>
-                                                    <h3 className='text-sm tracking-wider font-bold mt-2 mb-2 text-gray-200'>{ele.title}</h3> <span className='text-primary  font-bold'>{ele.at}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p className='pl-16 text-sm tracking-wide leading-6'>{ele.text}</p>
+                                        <h2 style={{
+                                            background: '-webkit-linear-gradient(45deg, #9B1096 , #FAFF0D)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                        }} className='font-bold text-lg '>BACHELOR DEGREE</h2>
+                                        <span className='font-normal text-xs text-white bg-dark rounded-full px-2 py-1'>2020</span>
+                                    </div>
+                                    <p className='leading-loose tracking-wider'>I started my studies from the primary stage all the way to middle school and high school, in which I took my bachelor’s degree with a rate of 90%, which qualified me to enter the university.</p>
+                                </article>
+                            </div>
+                        </div>
+                        <div className='flex justify-start items-center w-full my-10'>
+                            <div className='border-2 border-dashed border-white w-[20%]'></div>
+                            <div className='border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                <article className='p-8'>
+                                    <div className='flex justify-start items-center mb-3 gap-2'>
 
-                                    </li>
-                                </ul>
-                            )
-                        })
-                    }
+                                        <h2 style={{
+                                            background: '-webkit-linear-gradient(45deg, #9B1096 , #FAFF0D)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                        }} className='font-bold text-lg '>BACHELOR DEGREE</h2>
+                                        <span className='font-normal text-xs text-white bg-dark rounded-full px-2 py-1'>2020</span>
+                                    </div>
+                                    <p className='leading-loose tracking-wider'>I started my studies from the primary stage all the way to middle school and high school, in which I took my bachelor’s degree with a rate of 90%, which qualified me to enter the university.</p>
+                                </article>
+                            </div>
+                        </div>
+                        <div className='flex justify-start items-center w-full'>
+                            <div className='border-2 border-dashed border-white w-[60%]'></div>
+                            <div className='border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                <article className='p-8'>
+                                    <div className='flex justify-start items-center mb-3 gap-2'>
+
+                                        <h2 style={{
+                                            background: '-webkit-linear-gradient(45deg, #9B1096 , #FAFF0D)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                        }} className='font-bold text-lg '>BACHELOR DEGREE</h2>
+                                        <span className='font-normal text-xs text-white bg-dark rounded-full px-2 py-1'>2020</span>
+                                    </div>
+                                    <p className='leading-loose tracking-wider'>I started my studies from the primary stage all the way to middle school and high school, in which I took my bachelor’s degree with a rate of 90%, which qualified me to enter the university.</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                <div className='flex justify-start items-center mt-32'>
+                    <Image width={100} height={200} src="/shapes/rectangular/experience.svg" alt="image-head-2" />
+                    <div className='w-full'>
+                        <div className='flex justify-start items-center w-full'>
+                            <div className='border-2 border-dashed border-white w-[60%]'></div>
+                            <div className='border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                <article className='p-8'>
+                                    <div className='flex justify-start items-center mb-3 gap-2'>
+
+                                        <h2 style={{
+                                            background: '-webkit-linear-gradient(45deg, #0D8BFF , #6F109B)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                        }} className='font-bold text-lg '>BACHELOR DEGREE</h2>
+                                        <span className='font-normal text-xs text-white bg-dark rounded-full px-2 py-1'>2020</span>
+                                    </div>
+                                    <p className='leading-loose tracking-wider'>I started my studies from the primary stage all the way to middle school and high school, in which I took my bachelor’s degree with a rate of 90%, which qualified me to enter the university.</p>
+                                </article>
+                            </div>
+                        </div>
+                        <div className='flex justify-start items-center w-full my-10'>
+                            <div className='border-2 border-dashed border-white w-[20%]'></div>
+                            <div className='border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                <article className='p-8'>
+                                    <div className='flex justify-start items-center mb-3 gap-2'>
+
+                                        <h2 style={{
+                                            background: '-webkit-linear-gradient(45deg, #0D8BFF , #6F109B)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                        }} className='font-bold text-lg '>BACHELOR DEGREE</h2>
+                                        <span className='font-normal text-xs text-white bg-dark rounded-full px-2 py-1'>2020</span>
+                                    </div>
+                                    <p className='leading-loose tracking-wider'>I started my studies from the primary stage all the way to middle school and high school, in which I took my bachelor’s degree with a rate of 90%, which qualified me to enter the university.</p>
+                                </article>
+                            </div>
+                        </div>
+                        <div className='flex justify-start items-center w-full'>
+                            <div className='border-2 border-dashed border-white w-[60%]'></div>
+                            <div className='border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                <article className='p-8'>
+                                    <div className='flex justify-start items-center mb-3 gap-2'>
+
+                                        <h2 style={{
+                                            background: '-webkit-linear-gradient(45deg, #0D8BFF , #6F109B)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                        }} className='font-bold text-lg '>BACHELOR DEGREE</h2>
+                                        <span className='font-normal text-xs text-white bg-dark rounded-full px-2 py-1'>2020</span>
+                                    </div>
+                                    <p className='leading-loose tracking-wider'>I started my studies from the primary stage all the way to middle school and high school, in which I took my bachelor’s degree with a rate of 90%, which qualified me to enter the university.</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>

@@ -25,7 +25,7 @@
 
 /* Style the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background: #005BA4;
+  background: #303030a1;
   /* Color of the thumb */
   border-radius: 6px;
   /* Rounded corners of the thumb */

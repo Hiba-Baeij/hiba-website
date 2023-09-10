@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import React from 'react'
-import '../styles/style.css'
+
 import { FaFacebook, FaLinkedin, FaInstagram, FaTelegram, FaMessage, FaPhone, FaLocationPin } from "react-icons/fa6"
 import { TbSend } from "react-icons/tb"
 import PBtn from '../components/PBtn'
@@ -10,11 +11,13 @@ export default function page() {
         console.log('Button clicked!');
     };
     return (
-        <div className='contact relative h-screen px-40'>
-            <div className='flex justify-center items-center w-full mt-10'>
-                <h2 className='uppercase mt-14 text-4xl tracking-wider font-black'>Get in <span className='text-primary'>Touch</span> </h2>
-            </div>
-            <div className='grid grid-cols-3 mt-0 md:mt-20'>
+        <div className='contact relative h-screen px-40 flex justify-center items-center'>
+            <Image style={{ position: 'absolute', bottom: '75%', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-1" />
+            <Image style={{ position: 'absolute', top: 0, right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
+            <Image style={{ position: 'absolute', top: '-2rem', left: '40%' }} width={130} height={68} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
+            <Image style={{ position: 'absolute', left: '-3rem', bottom: 0, width: 'auto' }} width={120} height={0} src="/shapes/lines/line-purple.svg" alt="image-head-4" />
+
+            <div className='grid grid-cols-3 mt-20'>
                 <div className='md:col-span-1 col-span-3 flex flex-col justify-start items-start '>
                     <h2 className='text-xl font-semibold mb-4'>DON'T BE SHY !</h2>
                     <p>I am always open to contact me,
@@ -25,31 +28,23 @@ export default function page() {
                     <div className='flex justify-start items-start flex-col md:mt-6 mt-2'>
 
                         <div className='flex justify-start items-start flex-col mt-6 gap-10 w-full'>
-                            <div className='flex justify-center items-center gap-6'>
-                                <FaLocationPin size={30} color='#005BA4' />
-                                {/* <div className='bg-primary w-12 h-12 rounded-full flex justify-center items-center'><FaMessage size={20} /></div> */}
-                                <div className='flex justify-start flex-col items-start '>
-                                    <span>ADDRESS POINT</span>
-                                    <span>Aleppo, Syria</span>
-                                </div>
-                            </div>
-                            <div className='flex justify-center items-center gap-6'>
-                                <FaMessage size={30} color='#005BA4' />
-                                {/* <div className='bg-primary w-12 h-12 rounded-full flex justify-center items-center'><FaMessage size={20} /></div> */}
-                                <div className='flex justify-start flex-col items-start '>
-                                    <span>MAIL ME</span>
-                                    <a href="https://mail.google.com/mail/u/0/#sent" target="_blank" rel="noopener noreferrer" className='underline'>hibabeiaj@gmail.com</a>
-                                </div>
-                            </div>
-                            <div className='flex justify-center items-center gap-6 mr-8'>
-                                <FaPhone size={30} color='#005BA4' />
 
-                                {/* <div className='bg-primary w-12 h-12 rounded-full flex justify-center items-center'><FaPhone size={20} /></div> */}
-                                <div className='flex justify-start flex-col items-start '>
-                                    <span>CALL ME</span>
-                                    <a href="https://mail.google.com/mail/u/0/#sent" target="_blank" rel="noopener noreferrer" className='underline'>+930 967283981</a>
-                                </div>
+                            <div className='flex justify-start flex-col items-start '>
+                                <span>ADDRESS POINT</span>
+                                <span>Aleppo, Syria</span>
                             </div>
+
+
+                            <div className='flex justify-start flex-col items-start '>
+                                <span>MAIL ME</span>
+                                <a href="https://mail.google.com/mail/u/0/#sent" target="_blank" rel="noopener noreferrer" className='underline'>hibabeiaj@gmail.com</a>
+                            </div>
+
+                            <div className='flex justify-start flex-col items-start '>
+                                <span>CALL ME</span>
+                                <a href="https://mail.google.com/mail/u/0/#sent" target="_blank" rel="noopener noreferrer" className='underline'>+930 967283981</a>
+                            </div>
+
                         </div>
                         <div className='flex justify-start items-start gap-6 mt-10 w-full'>
                             <a href='https://www.facebook.com/hiba.be.756/' target='_blank' className='overflow-hidden bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaFacebook size={20} /></a>
@@ -77,12 +72,14 @@ export default function page() {
 
                         </div>
                         <div className='col-span-2'>
-                            <PBtn onClick={handleButtonClick} text='Send Message' icon={<TbSend size={20} color='#fff' />}></PBtn>
+                            <PBtn className='top-4 -left-2' onClick={handleButtonClick} text='Send Message' border={<Image src='/shapes/ovals/oval-green.svg' height={97} width={200} alt='border' />} icon={<TbSend size={20} color='#fff' />}></PBtn>
                         </div>
 
                     </div>
                 </div>
             </div>
+            <Image style={{ position: 'absolute', right: '-1rem', top: '35rem' }} width={120} height={120} src="/shapes/triangles/triangle-pink.svg" alt="image-head-7" />
+
         </div>
     )
 }
