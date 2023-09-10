@@ -2,6 +2,11 @@ import React from 'react'
 import PBtn from '../components/PBtn'
 import { FaDownload, FaBagShopping } from "react-icons/fa6"
 import Image from 'next/image'
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+    title: 'About Me',
+    description: 'Personal Information ,Skills, Experience and Education',
+}
 const careers = [
     {
         year: '2019',
@@ -121,6 +126,7 @@ const icons = [
     }
 
 ]
+
 export default function page() {
     const handleButtonClick = () => {
         // Handle the click event here

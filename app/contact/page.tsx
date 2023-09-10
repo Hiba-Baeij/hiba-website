@@ -1,11 +1,17 @@
 import Image from 'next/image';
 import React from 'react'
-
+import type { Metadata } from 'next'
 import { FaFacebook, FaLinkedin, FaInstagram, FaTelegram, FaMessage, FaPhone, FaLocationPin } from "react-icons/fa6"
 import { TbSend } from "react-icons/tb"
 import PBtn from '../components/PBtn'
 
+
+export const metadata: Metadata = {
+    title: 'Contact Me',
+    description: 'I am always open to contact me',
+}
 export default function page() {
+
     const handleButtonClick = () => {
         // Handle the click event here
         console.log('Button clicked!');

@@ -3,10 +3,12 @@
 import { useDriveResolver } from '@/utils/useDriveResolver';
 import Image from 'next/image';
 import React from 'react'
+import type { Metadata } from 'next'
 
-import 'swiper/css';
-import '../styles/style.css'
-
+export const metadata: Metadata = {
+    title: 'Portfolio',
+    description: 'Portfolio of my projects',
+}
 const works = [
     {
         title: "Broker Managment",
