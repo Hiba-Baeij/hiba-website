@@ -109,7 +109,7 @@ const icons = [
     },
     {
         icons: '/icons/style.svg',
-        title: 'Style Component',
+        title: 'Styled Components',
     },
     {
         icons: '/icons/vuetify.svg',
@@ -188,7 +188,7 @@ export default function page() {
 
                                 <div className='col-span-5 md:col-span-1'>
                                     <div className='flex flex-col justify-center items-center hover:scale-125 transition-all cursor-pointer'>
-                                        <img src={ele.icons} alt="icons" className='w-12 md:w-[5.6rem] h-12 md:h-[4.7rem]' />
+                                        <img style={{ objectFit: 'contain' }} src={ele.icons} alt="icons" className='w-12 md:w-[5.6rem] h-12 md:h-[4.7rem]' />
                                         <span className='text-center opacity-50 mt-5'>{ele.title}</span>
                                     </div>
                                 </div>
