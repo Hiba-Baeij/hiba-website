@@ -1,5 +1,4 @@
 "use client"
-
 import { useDriveResolver } from '@/utils/useDriveResolver';
 import Image from 'next/image';
 import React from 'react'
@@ -110,8 +109,6 @@ const works = [
     },
 ]
 export default function page() {
-
-
     return (
         <div className='portfolio relative h-screen px-40 mt-48'>
             <Image style={{ position: 'absolute', top: '-10rem', right: '-2rem' }} width={100} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
