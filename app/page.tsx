@@ -9,13 +9,13 @@ export default function Home() {
   };
   return (
     <main className="home relative  overflow-hidden flex justify-center items-center h-screen ">
-      <div>
-        <Image style={{ position: 'absolute', top: 0, right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-1" />
-        <Image style={{ position: 'absolute', top: '-3rem', left: '30%', width: 'auto' }} width={120} height={0} src="/shapes/lines/line-yellow.svg" alt="image-head-5" />
-        <Image className='md:block hidden' style={{ position: 'absolute', top: '5rem', left: '50%' }} width={80} height={33} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-2" />
-        <Image style={{ position: 'absolute', bottom: '72%', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-3" />
-        <Image style={{ position: 'absolute', bottom: '-2rem', left: '2rem' }} width={120} height={120} src="/shapes/triangles/triangle-pink.svg" alt="image-head-7" />
-      </div>
+
+      <Image style={{ position: 'absolute', top: 0, right: '-2rem' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-1" />
+      <Image style={{ position: 'absolute', top: '-2rem', left: '30%' }} width={120} height={0} src="/shapes/lines/line-yellow.svg" alt="image-head-5" />
+      <Image className='md:block hidden' style={{ position: 'absolute', top: '5rem', left: '50%' }} width={80} height={33} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-2" />
+      <Image style={{ position: 'absolute', bottom: '72%', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-3" />
+      <Image style={{ position: 'absolute', bottom: '-2rem', left: '2rem' }} width={120} height={120} src="/shapes/triangles/triangle-pink.svg" alt="image-head-7" />
+
       <div className=' grid grid-cols-2 gap-[12rem]'>
         <div className='md:col-span-1 col-span-2'>
           <HeaderOne />

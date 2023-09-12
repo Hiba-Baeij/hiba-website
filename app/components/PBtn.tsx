@@ -9,15 +9,15 @@ type ButtonProps = {
 };
 export default function PBtn(props: ButtonProps) {
     return (
-        <div className='relative'>
+        <button className='relative'>
             <>
                 {props.border}
-                <button className={`${props.className} flex justify-center items-center absolute `}>
+                <div className={`${props.className} flex justify-center items-center absolute `}>
                     <span className='mx-6 font-bold uppercase text-sm'>{props.text}</span>
                     {props.icon}
-                </button>
+                </div>
             </>
-        </div>
+        </button>
     )
 }
 
