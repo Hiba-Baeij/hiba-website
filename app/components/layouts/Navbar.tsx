@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react'
@@ -46,27 +47,51 @@ export default function Navbar() {
 
     };
     return (
+        <>
+            <div className='md:block hidden fixed right-0 top-2 z-50'>
+                <ul className='flex justify-end items-center gap-8 py-5 px-20'>
+                    {
+                        links.map((ele) => {
+                            return (
+                                <li key={ele.id} >
 
-        <div className='fixed right-0 top-2 z-50'>
-            <ul className='flex justify-end items-center gap-8 py-5 px-20'>
-                {
-                    links.map((ele) => {
-                        return (
-                            <li key={ele.id} >
+                                    <Link href={ele.path}
+                                        style={{ fontWeight: pathname == ele.path ? 'bolder' : 'lighter', }}
+                                        className=''>
+                                        {ele.name}
+                                    </Link>
 
-                                <Link href={ele.path}
-                                    style={{ fontWeight: pathname == ele.path ? 'bolder' : 'lighter', }}
-                                    className=''>
-                                    {ele.name}
-                                </Link>
+                                </li>
+                            )
 
-                            </li>
-                        )
+                        })
+                    }
+                </ul>
+            </div>
+            <div className='block md:hidden fixed bottom-0 z-50 bg-[#000] shadow-2xl shadow-white w-full'>
+                <ul className='flex justify-center items-center gap-12 pb-5 pt-2'>
+                    {
+                        links.map((ele) => {
+                            return (
+                                <li key={ele.id} >
+                                    <div className='rounded mb-3' style={{ borderTop: pathname == ele.path ? '4px solid #EE3E9E' : '' }}></div>
 
-                    })
-                }
-            </ul>
-        </div>
+                                    <Link href={ele.path}
+
+                                    >
+                                        {/* {pathname == ele.path ? <Image className='mt-2' width={40} height={0} src="/shapes/lines/line-navbar.svg" alt="image-line" /> : null} */}
+                                        <ele.icon size={25} />
+                                    </Link>
+
+                                </li>
+                            )
+
+                        })
+                    }
+                </ul>
+            </div>
+        </>
+
 
     )
 }

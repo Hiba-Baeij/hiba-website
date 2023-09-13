@@ -17,11 +17,11 @@ export default function page() {
         console.log('Button clicked!');
     };
     return (
-        <div className='contact relative h-screen px-40 flex justify-center items-center'>
-            <Image style={{ position: 'absolute', bottom: '75%', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-1" />
-            <Image style={{ position: 'absolute', top: 0, right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
-            <Image style={{ position: 'absolute', top: '-2rem', left: '40%' }} width={130} height={68} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
-            <Image style={{ position: 'absolute', left: '-3rem', bottom: 0, width: 'auto' }} width={120} height={0} src="/shapes/lines/line-purple.svg" alt="image-head-4" />
+        <div className='contact relative md:h-screen h-fit md:px-40 px-10 flex justify-center items-center mb-20 md:mb-0'>
+            <Image className='md:block hidden' style={{ position: 'absolute', bottom: '75%', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-1" />
+            <Image className='md:block hidden' style={{ position: 'absolute', top: 0, right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
+            <Image className='md:block hidden' style={{ position: 'absolute', top: '-2rem', left: '40%' }} width={130} height={68} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
+            <Image className='md:block hidden' style={{ position: 'absolute', left: '-3rem', bottom: 0, width: 'auto' }} width={120} height={0} src="/shapes/lines/line-purple.svg" alt="image-head-4" />
 
             <div className='grid grid-cols-3 mt-20'>
                 <div className='md:col-span-1 col-span-3 flex flex-col justify-start items-start '>
@@ -84,7 +84,7 @@ export default function page() {
                     </div>
                 </div>
             </div>
-            <Image style={{ position: 'absolute', right: '-1rem', top: '35rem' }} width={120} height={120} src="/shapes/triangles/triangle-pink.svg" alt="image-head-7" />
+            <Image className='md:block hidden' style={{ position: 'absolute', right: '-1rem', top: '35rem' }} width={120} height={120} src="/shapes/triangles/triangle-pink.svg" alt="image-head-7" />
 
         </div>
     )

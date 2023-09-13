@@ -15,11 +15,11 @@ function HeaderOne() {
                 ease: [0, 0.71, 0.2, 1.01]
             }} className=" text-white">
 
-            <div className="flex justify-center lg:justify-start items-center lg:items-start flex-col">
+            <div className="flex justify-start mx-8 items-start flex-col">
 
-                <h2 className='font-extrabold text-6xl tracking-wider leading-normal'>Hi,<br /> I'M<strong className='text-[#17C4EA]'> HIBA BAEEJ</strong> </h2>
-                <div className='mt-2'>
-                    <Link href='/'>
+                <h2 style={{ lineHeight: '1.3' }} className='font-extrabold lg:text-6xl md:text-4xl text-3xl tracking-wider leading-normal'>Hi,<br /> I'M<strong className='text-[#17C4EA]'> HIBA BAEEJ</strong> </h2>
+                <div className='mt-2 md:block hidden'>
+                    <Link href='/contact'>
                         <div className='flex justify-start items-center gap-5'>
                             <span className='font-bold'>CONTACT ME</span> <FaUser size={20} />
                         </div>

@@ -133,17 +133,20 @@ export default function page() {
         console.log('Button clicked!');
     };
     return (
-        <div className=' relative h-screen px-40'>
-            <Image style={{ position: 'absolute', top: '-6rem', right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
-            <Image style={{ position: 'absolute', top: '3rem', left: '60%', }} width={80} height={33} src="/shapes/zigzags/zigzag-yellow.svg" alt="image-head-2" />
-            <Image style={{ position: 'absolute', right: '-15rem', top: '2rem' }} priority width={400} height={400} src="/shapes/circles/circle-blue.svg" alt="image-head-8" />
-            <Image style={{ position: 'absolute', top: '-20%', left: '-4rem' }} width={200} height={200} src="/shapes/circles/circle-small-blue.svg" alt="image-head-6" />
+
+        <div className=' relative md:px-40 px-10'>
+            <Image className='block md:hidden' style={{ position: 'absolute', top: "-12rem", left: '-5rem' }} width={200} height={200} src="/shapes/circles/circle-red-mobile.svg" alt="image-head" />
+            <Image className='block md:hidden' style={{ position: 'absolute', top: '-6rem', right: '0rem' }} width={100} height={50} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-2" />
+            <Image className='md:block hidden' style={{ position: 'absolute', top: '-6rem', right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
+            <Image className='md:block hidden' style={{ position: 'absolute', top: '3rem', left: '60%', }} width={80} height={33} src="/shapes/zigzags/zigzag-yellow.svg" alt="image-head-2" />
+            <Image className='lg:block hidden ' style={{ position: 'absolute', right: '-15rem', top: '2rem' }} width={400} height={400} src="/shapes/circles/circle-blue.svg" alt="image-head-8" />
+            <Image className='md:block hidden' style={{ position: 'absolute', top: '-20%', left: '-4rem' }} width={200} height={200} src="/shapes/circles/circle-small-blue.svg" alt="image-head-6" />
 
             {/* PERSONAL INFOS */}
-            <div className='grid grid-cols-2 lg:mt-28 mt-48'>
-                <div className='lg:col-span-1 col-span-2 md:order-1 order-2 mt-8 md:mt-0'>
+            <div className='grid grid-cols-2 mt-24 md:mt-14'>
+                <div className='md:col-span-1 col-span-2 md:order-1 order-2 mt-8 md:mt-0'>
                     <h2 className='text-xl font-semibold'>PERSONAL INFOS</h2>
-                    <div className='col-span-6 flex w-full mt-12 gap-10 mb-10'>
+                    <div className='flex w-full mt-12 gap-10 mb-10 flex-wrap'>
                         <ul>
                             <div className='flex justify-start items-center gap-3'>
                                 <li className='opacity-60'>First Name:</li><span className='font-bold'>Hiba</span>
@@ -177,7 +180,7 @@ export default function page() {
 
 
                 </div>
-                <div className='lg:col-span-1 col-span-2 flex lg:justify-end justify-start items-center order-1 md:order-2'>
+                <div className='md:col-span-1 col-span-2 flex lg:justify-end justify-start items-center order-1 md:order-2'>
                 </div>
             </div>
             <div className='w-full flex justify-center items-center'>
@@ -187,16 +190,14 @@ export default function page() {
             {/* My Skills */}
             <div>
                 <h2 className='text-xl font-semibold text-center'>MY SKILLS</h2>
-                <div className='grid grid-cols-5 gap-10 m-14'>
+                <div className='flex justify-center items-center flex-wrap gap-14 md:m-14 m-2 mt-20'>
                     {
                         icons.map((ele) => {
                             return (
 
-                                <div className='col-span-5 md:col-span-1'>
-                                    <div className='flex flex-col justify-center items-center hover:scale-125 transition-all cursor-pointer'>
-                                        <img style={{ objectFit: 'contain' }} src={ele.icons} alt="icons" className='w-12 md:w-[5.6rem] h-12 md:h-[4.7rem]' />
-                                        <span className='text-center opacity-50 mt-5'>{ele.title}</span>
-                                    </div>
+                                <div className='flex flex-col justify-center items-center hover:scale-125 transition-all cursor-pointer w-40'>
+                                    <Image style={{ objectFit: 'contain' }} width={48} height={48} src={ele.icons} alt="icons" className='w-12 md:w-[5.6rem] h-12 md:h-[4.7rem]' />
+                                    <span className='text-center opacity-50 mt-5'>{ele.title}</span>
                                 </div>
                             )
                         })
@@ -209,7 +210,7 @@ export default function page() {
                 <div className='h-[1px] opacity-5 bg-white w-[30rem] my-20'></div>
             </div>
             {/* EXPERIENCE & EDUCATION */}
-            <div className='mt-10'>
+            {/* <div className='mt-10'>
                 <h2 className='text-xl font-semibold text-center'>EXPERIENCE & EDUCATION</h2>
                 <div className='flex justify-start items-center mt-32'>
                     <Image width={100} height={200} src="/shapes/rectangular/education.svg" alt="image-head-2" />
@@ -326,7 +327,7 @@ export default function page() {
 
                 </div>
 
-            </div>
+            </div> */}
 
         </div>
     )
