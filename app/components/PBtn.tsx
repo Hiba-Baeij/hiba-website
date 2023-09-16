@@ -1,4 +1,4 @@
-// import { Icon } from 'next/dist/lib/metadata/types/metadata-types'
+'use client';
 import React, { Component, ReactNode } from 'react'
 type ButtonProps = {
     text: string;
@@ -8,8 +8,9 @@ type ButtonProps = {
     onClick: () => void;
 };
 export default function PBtn(props: ButtonProps) {
+
     return (
-        <button className='relative'>
+        <button className='relative' onClick={props.onClick}>
             <>
                 {props.border}
                 <div className={`${props.className} flex justify-center items-center absolute `}>

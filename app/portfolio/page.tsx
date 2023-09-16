@@ -110,9 +110,10 @@ const works = [
 ]
 export default function page() {
     return (
-        <div className='portfolio relative h-screen px-40 mt-48'>
-            <Image style={{ position: 'absolute', top: '-10rem', right: '-2rem' }} width={100} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
-            <Image style={{ position: 'absolute', top: '-10rem', left: '40%' }} width={130} height={68} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
+        <div className='portfolio relative md:px-40 px-10 md:mt-48 mt-24 mb-20'>
+            <Image className='md:block hidden' style={{ position: 'absolute', top: '-10rem', right: '-2rem' }} width={100} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
+            <Image className='md:block hidden' style={{ position: 'absolute', top: '-10rem', left: '40%' }} width={130} height={68} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
+            <Image style={{ position: 'absolute', top: '-8rem', right: '1rem' }} width={100} height={58} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
 
             <Image style={{ position: 'absolute', top: '-22rem', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-1" />
 
@@ -122,18 +123,18 @@ export default function page() {
                         return (
                             index % 2 == 0 ?
                                 <>
-                                    <div className='col-span-3 hover:cursor-pointer my-5'>
+                                    <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5'>
                                         <Image alt='work-image' style={{ borderRadius: '15px', border: "4px solid #2c2e2ebe" }} height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
 
                                     </div>
-                                    <div className='col-span-3 relative p-10 pt-0 my-5'>
-                                        <h2 className='text-5xl font-bold opacity-50 text-end'>{
+                                    <div className='md:col-span-3 col-span-6 relative md:p-10 p-0 pt-0 my-5'>
+                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end'>{
                                             (index + 1).toLocaleString("en-US", {
                                                 minimumIntegerDigits: 2,
                                                 useGrouping: false,
                                             })
                                         }</h2>
-                                        <h2 className='text-4xl font-bold'>{work.title}</h2>
+                                        <h2 className='md:text-4xl text-2xl font-bold'>{work.title}</h2>
                                         <div className='flex justify-start items-center gap-5 mt-4'>
                                             <span>build with </span>
                                             {
@@ -149,14 +150,14 @@ export default function page() {
                                 </>
                                 :
                                 <>
-                                    <div className='col-span-3 relative p-10 pt-0 my-5'>
-                                        <h2 className='text-5xl font-bold opacity-50 text-end'>{
+                                    <div className='md:col-span-3 col-span-6 relative md:p-10 p-0 pt-0 my-5'>
+                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end'>{
                                             (index + 1).toLocaleString("en-US", {
                                                 minimumIntegerDigits: 2,
                                                 useGrouping: false,
                                             })
                                         }</h2>
-                                        <h2 className='text-4xl font-bold'>{work.title}</h2>
+                                        <h2 className='md:text-4xl text-2xl font-bold'>{work.title}</h2>
                                         <div className='flex justify-start items-center gap-5 mt-4'>
                                             <span>build with </span>
                                             {
@@ -168,7 +169,7 @@ export default function page() {
                                         </div>
 
                                     </div>
-                                    <div className='col-span-3 hover:cursor-pointer my-5'>
+                                    <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5'>
                                         <Image style={{ objectFit: 'contain', borderRadius: '15px', border: "4px solid #2c2e2ebe" }} alt='work-image' height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
 
                                     </div>

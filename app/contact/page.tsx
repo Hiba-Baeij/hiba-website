@@ -2,8 +2,7 @@ import Image from 'next/image';
 import React from 'react'
 import type { Metadata } from 'next'
 import { FaFacebook, FaLinkedin, FaInstagram, FaTelegram, FaMessage, FaPhone, FaLocationPin } from "react-icons/fa6"
-import { TbSend } from "react-icons/tb"
-import PBtn from '../components/PBtn'
+import ContactBtn from './components/ContactBtn';
 
 
 export const metadata: Metadata = {
@@ -12,12 +11,11 @@ export const metadata: Metadata = {
 }
 export default function page() {
 
-    const handleButtonClick = () => {
-        // Handle the click event here
-        console.log('Button clicked!');
-    };
     return (
-        <div className='contact relative md:h-screen h-fit md:px-40 px-10 flex justify-center items-center mb-20 md:mb-0'>
+        <div className='contact relative md:h-screen h-fit md:px-40 px-10 flex justify-center items-center mb-20 md:mb-0 mt-20 md:mt-0'>
+            <Image className='block md:hidden' style={{ position: 'absolute', top: "-9rem", left: '-3rem' }} width={200} height={200} src="/shapes/circles/circle-blue-mobile.svg" alt="image-head" />
+            <Image className='block md:hidden' style={{ position: 'absolute', top: '-6rem', right: '0rem' }} width={100} height={50} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
+
             <Image className='md:block hidden' style={{ position: 'absolute', bottom: '75%', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-1" />
             <Image className='md:block hidden' style={{ position: 'absolute', top: 0, right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
             <Image className='md:block hidden' style={{ position: 'absolute', top: '-2rem', left: '40%' }} width={130} height={68} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
@@ -78,7 +76,7 @@ export default function page() {
 
                         </div>
                         <div className='col-span-2'>
-                            <PBtn className='top-4 -left-2' onClick={handleButtonClick} text='Send Message' border={<Image src='/shapes/ovals/oval-green.svg' height={97} width={200} alt='border' />} icon={<TbSend size={20} color='#fff' />}></PBtn>
+                            <ContactBtn />
                         </div>
 
                     </div>

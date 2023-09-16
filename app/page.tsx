@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import HeaderOne from './components/page/HeaderOne';
-import HeaderTwo from './components/page/HeaderTwo';
+import HeaderOne from './components/page/home/HeaderOne';
+import HeaderTwo from './components/page/home/HeaderTwo';
 
 export default function Home() {
   const handleButtonClick = () => {
