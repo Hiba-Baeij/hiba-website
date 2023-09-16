@@ -1,9 +1,8 @@
 "use client"
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaHouse, FaUser, FaBagShopping, FaMessage, FaMoon } from "react-icons/fa6";
 
 const links = [
@@ -38,17 +37,28 @@ const links = [
 ];
 export default function Navbar() {
     const pathname = usePathname();
-    const style = (path: string) => {
-        return {
-            boxShadow: pathname == path ? '0em 0em 0 0em #0F1212' : '-0.2em -0.2em 0 .05em #005BA4',
-            backgroundColor: pathname == path ? "#005BA4" : "#0F1212",
+    const [isTop, setIsTop] = useState(true);
+
+    useEffect(() => {
+        // Add a scroll event listener to track the scroll position
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            // Remove the scroll event listener when the component unmounts
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const handleScroll = () => {
+        // Check if the user has scrolled down more than a certain threshold (e.g., 100 pixels)
+        if (window.scrollY > 100) {
+            setIsTop(false);
+        } else {
+            setIsTop(true);
         }
-
-
     };
     return (
         <>
-            <div className='md:block hidden fixed right-0 top-2 z-50'>
+            <div className={isTop ? 'md:block hidden fixed right-0 top-2 z-50 ' : 'md:block hidden fixed right-0 top-0 z-50 bg-black border-b-2 border-[#45454598] w-full'}>
                 <ul className='flex justify-end items-center gap-8 py-5 px-20'>
                     {
                         links.map((ele) => {
@@ -56,8 +66,8 @@ export default function Navbar() {
                                 <li key={ele.id} >
 
                                     <Link href={ele.path}
-                                        style={{ fontWeight: pathname == ele.path ? 'bolder' : 'lighter', }}
-                                        className=''>
+                                        style={{ fontWeight: pathname == ele.path ? 'bolder' : 'lighter' }}
+                                    >
                                         {ele.name}
                                     </Link>
 
@@ -68,18 +78,14 @@ export default function Navbar() {
                     }
                 </ul>
             </div>
-            <div className='block md:hidden fixed bottom-0 z-50 bg-[#000] shadow-2xl shadow-white w-full'>
+            <div className='block md:hidden fixed bottom-0 z-50 bg-black shadow-2xl shadow-white w-full'>
                 <ul className='flex justify-center items-center gap-12 pb-5 pt-2'>
                     {
                         links.map((ele) => {
                             return (
                                 <li key={ele.id} >
                                     <div className='rounded mb-3' style={{ borderTop: pathname == ele.path ? '4px solid #EE3E9E' : '' }}></div>
-
-                                    <Link href={ele.path}
-
-                                    >
-                                        {/* {pathname == ele.path ? <Image className='mt-2' width={40} height={0} src="/shapes/lines/line-navbar.svg" alt="image-line" /> : null} */}
+                                    <Link href={ele.path}>
                                         <ele.icon size={25} />
                                     </Link>
 

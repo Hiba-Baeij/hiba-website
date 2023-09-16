@@ -113,7 +113,7 @@ export default function page() {
         <div className='portfolio relative md:px-40 px-10 md:mt-48 mt-24 mb-20'>
             <Image className='md:block hidden' style={{ position: 'absolute', top: '-10rem', right: '-2rem' }} width={100} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
             <Image className='md:block hidden' style={{ position: 'absolute', top: '-10rem', left: '40%' }} width={130} height={68} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
-            <Image style={{ position: 'absolute', top: '-8rem', right: '1rem' }} width={100} height={58} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
+            <Image className='block md:hidden' style={{ position: 'absolute', top: '-8rem', right: '1rem' }} width={100} height={58} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-3" />
 
             <Image style={{ position: 'absolute', top: '-22rem', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-1" />
 
