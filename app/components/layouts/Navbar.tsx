@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-import { FaHouse, FaUser, FaBagShopping, FaMessage, FaMoon } from "react-icons/fa6";
+import { FaHouse, FaUser, FaBagShopping, FaMessage, FaMoon, FaTelegram, FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const links = [
     {
@@ -58,7 +58,24 @@ export default function Navbar() {
     };
     return (
         <>
-            <div className={isTop ? 'md:block hidden fixed right-0 top-2 z-50 ' : 'md:block hidden fixed right-0 top-0 z-50 bg-black border-b-2 border-[#45454598] w-full'}>
+            <div className={isTop ? 'md:flex justify-between items-center hidden fixed right-0 top-2 z-50 ' : 'md:flex justify-between items-center hidden fixed right-0 top-0 z-50 bg-black/70 backdrop-blur-sm border-b border-[#45454598] w-full'}>
+                {
+                    isTop ? null : <ul className='flex justify-start items-center gap-10 px-20'>
+                        <li>
+                            <a href='https://www.facebook.com/hiba.be.756/' target='_blank' ><FaFacebook size={20} /></a>
+                        </li>
+                        <li>
+                            <a href='https://t.me/Haboosh78' target='_blank'><FaTelegram size={20} /></a>
+                        </li>
+                        <li>
+                            <a href='https://www.din.com/in/hiba-baeij-59573222b/' target='_blank'><FaLinkedin size={20} /></a>
+                        </li>
+                        <li>
+                            <a href='https://www.instagram.com/hiba.be.756/' target='_blank'><FaInstagram size={20} /></a>
+                        </li>
+
+                    </ul>
+                }
                 <ul className='flex justify-end items-center gap-8 py-5 px-20'>
                     {
                         links.map((ele) => {
