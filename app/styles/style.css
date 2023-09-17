@@ -1,21 +1,8 @@
 /* about */
-.about h2::after {
-    content: "RESUME";
-    color: rgba(165, 165, 165, 0.474);
-    opacity: 0.1;
-    font-size: 4.5rem;
-    letter-spacing: 4px;
-    font-weight: bolder;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 10%;
-}
 
-.about li {
-    font-size: 14px;
-}
-
-.about ul span {
-    font-size: 13px;
+.about .personal-info {
+    height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

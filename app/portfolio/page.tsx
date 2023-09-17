@@ -26,7 +26,7 @@ const works = [
         type: "Landing Page",
         text: "I Worked On It In Most Pages With Elkood Frontend Team",
         description: "WordPress Website Template For Turkish Real Estate Company",
-        icons: ['/icons/vue.webp', '/icons/tailwind.webp', '/icons/vite.webp'],
+        icons: ['/icons/html.webp', '/icons/css.webp', '/icons/javascript.webp'],
         link: 'https://altinsaraygrup.com/',
         images: ["https://drive.google.com/file/d/1MLxW0icmtH5zifORBmkAyuftPidVIlfN/view?usp=drive_link"]
     },
@@ -35,7 +35,7 @@ const works = [
         type: "Dashboard",
         text: "I Worked On It As Vue Developer At Elkood Frontend Team",
         description: "This educational app caters to all academic levels and facilitates collaboration among designated teachers to record lessons for each stage. Its key feature is live streaming for real-time lesson delivery, utilizing WebSocket like Signal-R technologies. The app supports multiple user and teacher accounts, offers user-specific discounts, rewards points, and includes assessments upon course completion",
-        icons: ['/icons/vue.webp', '/icons/tailwind.webp', '/icons/vite.webp'],
+        icons: ['/icons/vue.webp', '/icons/bootstrap.webp'],
         link: '',
         images: [
             "https://drive.google.com/file/d/1uMayLV28mW06LS1SxT2XXFZLXzuF8sWe/view?usp=drive_link",
@@ -49,7 +49,7 @@ const works = [
         type: "Dashboard",
         text: "I Worked On It As Vue Developer At Elkood Frontend Team",
         description: "Dashboard Like E-Learning Mobile Application Content Management",
-        icons: ['/icons/vue.webp', '/icons/tailwind.webp', '/icons/vite.webp'],
+        icons: ['/icons/vue.webp', '/icons/bootstrap.webp'],
         link: '',
         images: [
             "https://drive.google.com/file/d/1PgyjvGi-xRmwk5XMo6cFlJXK9p1HTsoP/view?usp=drive_link"
@@ -60,7 +60,7 @@ const works = [
         type: "Ecommerce & Dashboard",
         text: "I Worked On It As Vue Developer At Elkood Frontend Team",
         description: "FlyOrder is a dashboard application designed for managing food delivery orders in the Damascus Governorate. It encompasses a wide range of features, including area and city management, store and branch management, product management, order processing from mobile applications, handling invoices, tracking sales and profit percentages for stores, application management, as well as notifications management using WebSocket and Signal-R, among other functionalities.",
-        icons: ['/icons/vue.webp', '/icons/tailwind.webp', '/icons/vite.webp'],
+        icons: ['/icons/vue.webp', '/icons/pinia.svg', '/icons/tailwind.webp', '/icons/vite.webp'],
         link: '',
         images: [
             "https://drive.google.com/file/d/1mwEbppfHFWNjxohWqLs5uxX3W3bB3_vu/view?usp=drive_link",
@@ -81,7 +81,7 @@ const works = [
         type: "Ecommerce & Dashboard",
         text: "I Worked On It As Vue Developer At Elkood Frontend Team",
         description: "A Simple Menu Display App For Golden Wrap Restaurant With A Content Dashboard.",
-        icons: ['/icons/vue.webp', '/icons/tailwind.webp', '/icons/vite.webp'],
+        icons: ['/icons/vue.webp', '/icons/bootstrap.webp'],
         link: '',
         images: [
             "https://drive.google.com/file/d/1DMwPbI8bTnXTGqOpBXTjBiFaUMbqQcYT/view?usp=drive_link",
@@ -93,7 +93,7 @@ const works = [
         type: "Landing Page & Dashboard",
         text: "I Worked On It As Vue Developer At Elkood Frontend Team",
         description: "Numerous companies incorporate QR codes into their marketing and advertising campaigns to convey diverse data types like website links, social media profiles, contact information, phone numbers, coupons, business hours, or PDF files containing product prices and service details. At QR Code Germany, we prioritize user-friendliness, offering a range of straightforward and practical options to assist you in effortlessly and cost-effectively delivering valuable information to your customers",
-        icons: ['/icons/vue.webp', '/icons/tailwind.webp', '/icons/vite.webp'],
+        icons: ['/icons/vue.webp', '/icons/nuxt.svg', '/icons/pinia.svg', '/icons/tailwind.webp', '/icons/vite.webp'],
         link: '',
         images: [
             "https://drive.google.com/file/d/1-nozIi4wi9m_y86W-os9jDE5nwQS34Oy/view?usp=drive_link",
@@ -109,7 +109,7 @@ const works = [
         type: "Dashboard",
         text: "I Worked On It As React Developer To fourth year project",
         description: "This platform facilitates the delivery of orders to customers across Syrian provinces, offering a range of services, including personal delivery, cargo shipping, and point-to-point deliveries, all tailored to speed and customer preferences.",
-        icons: ['/icons/vue.webp', '/icons/tailwind.webp', '/icons/vite.webp'],
+        icons: ['/icons/react.webp', '/icons/redux.webp', '/icons/material-ui.svg', '/icons/vite.webp'],
         link: '',
         images: [
             "https://drive.google.com/file/d/1lk888Hns0AzAmGuI4EqHCZzXZT4FQIsv/view?usp=drive_link",
@@ -134,16 +134,16 @@ export default function page() {
 
             <Image style={{ position: 'absolute', top: '-22rem', left: '-10rem' }} priority width={400} height={400} src="/shapes/circles/circle-red.svg" alt="image-head-1" />
 
-            <div className='grid grid-cols-6'>
+            <div className='md:grid hidden grid-cols-6 gap-8'>
                 {
                     works.map((work, index) => {
                         return (
                             index % 2 == 0 ?
                                 <>
-                                    <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5'>
+                                    <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
                                         <Image alt='work-image' style={{ borderRadius: '15px', border: "4px solid #2c2e2ebe" }} height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
                                     </div>
-                                    <div className='md:col-span-3 col-span-6 relative md:p-10 p-0 pt-0'>
+                                    <div className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
                                         <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-0'>{
                                             (index + 1).toLocaleString("en-US", {
                                                 minimumIntegerDigits: 2,
@@ -155,14 +155,18 @@ export default function page() {
                                         <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
                                             <p>{work.text}</p>
                                             <ReadMoreText text={work.description} />
-                                            <div className='flex justify-start items-center'>
+                                            <div className='flex justify-start items-center gap-5 flex-wrap'>
 
                                                 <span>build with </span>
-                                                {
-                                                    work.icons.map((icon) =>
-                                                        <img src={icon} width={50} alt="" className='hover:scale-125 transition-all cursor-pointer' />
-                                                    )
-                                                }
+                                                <div className='flex justify-start items-center gap-5'>
+
+                                                    {
+                                                        work.icons.map((icon) =>
+                                                            <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
+                                                        )
+                                                    }
+                                                </div>
+
                                             </div>
 
                                         </div>
@@ -172,8 +176,8 @@ export default function page() {
                                 </>
                                 :
                                 <>
-                                    <div className='md:col-span-3 col-span-6 relative md:p-10 p-0 pt-0'>
-                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-8'>{
+                                    <div className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
+                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-6 right-0'>{
                                             (index + 1).toLocaleString("en-US", {
                                                 minimumIntegerDigits: 2,
                                                 useGrouping: false,
@@ -185,12 +189,64 @@ export default function page() {
                                         <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
                                             <p>{work.text}</p>
                                             <ReadMoreText text={work.description} />
-                                            <div className='flex justify-start items-center'>
+                                            <div className='flex justify-start items-center gap-5 flex-wrap'>
 
                                                 <span>build with </span>
+                                                <div className='flex justify-start items-center gap-5'>
+
+                                                    {
+                                                        work.icons.map((icon) =>
+                                                            <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
+                                                        )
+                                                    }
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
+                                        <Image style={{ objectFit: 'contain', borderRadius: '15px', border: "4px solid #2c2e2ebe" }} alt='work-image' height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
+
+                                    </div>
+                                </>
+
+
+                        )
+                    })
+                }
+
+            </div>
+            <div className='grid md:hidden grid-cols-6 gap-8'>
+                {
+                    works.map((work, index) => {
+                        return (
+
+                            <>
+                                <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
+                                    <Image alt='work-image' style={{ borderRadius: '15px', border: "4px solid #2c2e2ebe" }} height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
+                                </div>
+                                <div className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
+                                    <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-0'>{
+                                        (index + 1).toLocaleString("en-US", {
+                                            minimumIntegerDigits: 2,
+                                            useGrouping: false,
+                                        })
+                                    }</h2>
+                                    <h2 className='md:text-4xl text-2xl font-bold'>{work.title}</h2>
+                                    <h2 className='text-lg mt-5 text-grayLight'>{work.type}</h2>
+                                    <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
+                                        <p>{work.text}</p>
+                                        <ReadMoreText text={work.description} />
+                                        <div className='flex justify-start items-center gap-5 flex-wrap'>
+
+                                            <span>build with </span>
+                                            <div className='flex justify-start items-center gap-5'>
+
                                                 {
                                                     work.icons.map((icon) =>
-                                                        <img src={icon} width={50} alt="" className='hover:scale-125 transition-all cursor-pointer' />
+                                                        <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
                                                     )
                                                 }
                                             </div>
@@ -198,11 +254,10 @@ export default function page() {
                                         </div>
 
                                     </div>
-                                    <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5'>
-                                        <Image style={{ objectFit: 'contain', borderRadius: '15px', border: "4px solid #2c2e2ebe" }} alt='work-image' height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
 
-                                    </div>
-                                </>
+                                </div>
+
+                            </>
 
 
                         )

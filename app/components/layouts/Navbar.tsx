@@ -95,7 +95,7 @@ export default function Navbar() {
                     }
                 </ul>
             </div>
-            <div className='block md:hidden fixed bottom-0 z-50 bg-black shadow-2xl shadow-white w-full'>
+            <div className='block md:hidden fixed bottom-0 z-50 bg-black/70 backdrop-blur-sm border-t border-[#45454598]  w-full'>
                 <ul className='flex justify-center items-center gap-12 pb-5 pt-2'>
                     {
                         links.map((ele) => {

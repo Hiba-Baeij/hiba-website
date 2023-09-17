@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import "../styles/style.css"
 import DownloadCv from './components/DownloadCv'
 import PhoneNumberCopy from './components/PhoneNumberCopy'
 export const metadata: Metadata = {
@@ -100,7 +101,7 @@ const icons = [
         link: "https://nextjs.org/docs"
     },
     {
-        icons: '/icons/nuxt.webp',
+        icons: '/icons/nuxt.svg',
         title: 'Nuxt Js',
         link: 'https://nuxt.com'
     },
@@ -163,56 +164,60 @@ export default function page() {
 
     return (
 
-        <div className=' relative md:px-40 px-10 pb-28 md:pb-20'>
+        <div className='about relative md:px-40 px-10 pb-28 md:pb-20'>
             <Image className='block md:hidden' style={{ position: 'absolute', top: "-12rem", left: '-5rem' }} width={200} height={200} src="/shapes/circles/circle-red-mobile.svg" alt="image-head" />
             <Image className='block md:hidden' style={{ position: 'absolute', top: '-6rem', right: '0rem' }} width={100} height={50} src="/shapes/zigzags/zigzag-green.svg" alt="image-head-2" />
             <Image className='md:block hidden' style={{ position: 'absolute', top: '-6rem', right: '-2rem', width: 'auto' }} width={80} height={33} src="/shapes/zigzags/zigzag-pink.svg" alt="image-head-2" />
             <Image className='md:block hidden' style={{ position: 'absolute', top: '3rem', left: '60%', }} width={80} height={33} src="/shapes/zigzags/zigzag-yellow.svg" alt="image-head-2" />
             <Image className='lg:block hidden ' style={{ position: 'absolute', right: '-15rem', top: '2rem' }} width={400} height={400} src="/shapes/circles/circle-blue.svg" alt="image-head-8" />
-            <Image className='md:block hidden' style={{ position: 'absolute', top: '-10rem', left: '-4rem' }} width={200} height={200} src="/shapes/circles/circle-small-blue.svg" alt="image-head-6" />
+            <Image className='md:block hidden' style={{ position: 'absolute', top: '-4rem', left: '-4rem' }} width={200} height={200} src="/shapes/circles/circle-small-blue.svg" alt="image-head-6" />
 
             {/* PERSONAL INFOS */}
-            <div className='grid grid-cols-2 md:mt-24 mt-14'>
-                <div className='md:col-span-1 col-span-2 md:order-1 order-2 mt-8 md:mt-0'>
-                    <h2 className='text-xl font-semibold'>PERSONAL INFOS</h2>
-                    <div className='flex w-full mt-12 gap-10 mb-10 flex-wrap'>
-                        <ul>
-                            <div className='flex justify-start items-center gap-3'>
-                                <li className='opacity-60'>First Name:</li><span className='font-bold'>Hiba</span>
-                            </div>
-                            <div className='flex justify-start items-center gap-3 mt-8'>
-                                <li className='opacity-60'>Age :</li>  <span className='font-bold'>22 Years</span>
-                            </div>
-                            <div className='flex justify-start items-center gap-3 mt-8'>
-                                <li className='opacity-60'>Phone:</li><PhoneNumberCopy />
-                            </div>
-                            <div className='flex justify-start items-center gap-3 mt-8'>
-                                <li className='opacity-60'>Languages:</li><span className='font-bold'> Arabic (native),English</span>
-                            </div>
-                        </ul>
-                        <ul>
-                            <div className='flex justify-start items-center gap-3'>
-                                <li className='opacity-60'>Last Name:</li><span className='font-bold'> Baeej</span>
-                            </div>
-                            <div className='flex justify-start items-center gap-3 mt-8'>
-                                <li className='opacity-60'>Nationaluty: </li><span className='font-bold'>Syria</span>
-                            </div>
-                            <div className='flex justify-start items-center gap-3 mt-8'>
-                                <li className='opacity-60'>Email: </li><span className='font-bold'><a target="_blank" rel="link-cv" href="https://mail.google.com/mail/u/0/"> hibabeiaj@gmail.com</a></span>
-                            </div>
-                            <div className='flex justify-start items-center gap-3 mt-8'>
-                                <li className='opacity-60'>Birthday:</li><span className='font-bold'> 10 july 2001</span>
-                            </div>
-                        </ul>
-                    </div>
+            <div className='personal-info mt-20 md:mt-0'>
 
-                    <DownloadCv />
-                </div>
-                <div className='md:col-span-1 col-span-2 flex lg:justify-end justify-start items-center order-1 md:order-2'>
+                <div className='grid grid-cols-2'>
+                    <div className='md:col-span-1 col-span-2 md:order-1 order-2 mt-8 md:mt-0'>
+                        <h2 className='text-xl font-semibold'>PERSONAL INFOS</h2>
+                        <div className='flex w-full mt-12 gap-10 mb-10 flex-wrap'>
+                            <ul>
+                                <div className='flex justify-start items-center gap-3'>
+                                    <li className='opacity-60'>First Name:</li><span className='font-bold'>Hiba</span>
+                                </div>
+                                <div className='flex justify-start items-center gap-3 mt-8'>
+                                    <li className='opacity-60'>Age :</li>  <span className='font-bold'>22 Years</span>
+                                </div>
+                                <div className='flex justify-start items-center gap-3 mt-8'>
+                                    <li className='opacity-60'>Phone:</li><PhoneNumberCopy />
+                                </div>
+                                <div className='flex justify-start items-center gap-3 mt-8'>
+                                    <li className='opacity-60'>Languages:</li><span className='font-bold'> Arabic (native),English</span>
+                                </div>
+                            </ul>
+                            <ul>
+                                <div className='flex justify-start items-center gap-3'>
+                                    <li className='opacity-60'>Last Name:</li><span className='font-bold'> Baeej</span>
+                                </div>
+                                <div className='flex justify-start items-center gap-3 mt-8'>
+                                    <li className='opacity-60'>Nationaluty: </li><span className='font-bold'>Syria</span>
+                                </div>
+                                <div className='flex justify-start items-center gap-3 mt-8'>
+                                    <li className='opacity-60'>Email: </li><span className='font-bold'><a target="_blank" rel="link-cv" href="https://mail.google.com/mail/u/0/"> hibabeiaj@gmail.com</a></span>
+                                </div>
+                                <div className='flex justify-start items-center gap-3 mt-8'>
+                                    <li className='opacity-60'>Birthday:</li><span className='font-bold'> 10 july 2001</span>
+                                </div>
+                            </ul>
+                        </div>
+
+                        <DownloadCv />
+                    </div>
+                    <div className='md:col-span-1 col-span-2 flex lg:justify-end justify-start items-center order-1 md:order-2'>
+                    </div>
                 </div>
             </div>
+
             <div className='w-full flex justify-center items-center'>
-                <div className='h-[1px] opacity-5 bg-white w-[30rem] md:my-20 my-12'></div>
+                <div className='h-[1px] opacity-5 bg-white w-[30rem] md:mb-20 mb-12 mt-20 md:mt-0'></div>
             </div>
 
             {/* My Skills */}
@@ -281,7 +286,7 @@ export default function page() {
 
                                     <div className={index == 1 ? 'flex justify-start items-center w-full my-10' : 'flex justify-start items-center w-full'}>
                                         <div className={index == 1 ? 'md:block hidden border-2 border-dashed border-white w-[20%]' : 'md:block hidden border-2 border-dashed border-white w-[60%]'}></div>
-                                        <div className='h-[330px] md:py-6 md:pl-6 md:pr-4 p-4 border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                        <div className='md:h-[330px] h-[380px] md:py-6 md:pl-6 md:pr-4 p-4 border-2 border-dashed border-white rounded-xl w-[30rem]'>
                                             <div className='flex flex-wrap justify-start flex-col items-start mb-3 gap-2'>
                                                 <div className='flex flex-wrap justify-start gap-6'>
 
