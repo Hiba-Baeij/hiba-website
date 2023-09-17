@@ -286,7 +286,7 @@ export default function page() {
 
                                     <div className={index == 1 ? 'flex justify-start items-center w-full my-10' : 'flex justify-start items-center w-full'}>
                                         <div className={index == 1 ? 'md:block hidden border-2 border-dashed border-white w-[20%]' : 'md:block hidden border-2 border-dashed border-white w-[60%]'}></div>
-                                        <div className='md:h-[330px] h-[380px] md:py-6 md:pl-6 md:pr-4 p-4 border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                        <div className='h-[350px] md:py-6 md:pl-6 md:pr-4 p-4 border-2 border-dashed border-white rounded-xl w-[30rem]'>
                                             <div className='flex flex-wrap justify-start flex-col items-start mb-3 gap-2'>
                                                 <div className='flex flex-wrap justify-start gap-6'>
 
