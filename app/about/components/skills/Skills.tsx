@@ -131,13 +131,7 @@ export default function Skills() {
 
     return (
         <>
-            <motion.h2 initial={{ opacity: 0, y: -400 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                    duration: 0.8,
-                    delay: 0.5,
-                    ease: [0, 0.71, 0.2, 1.01]
-                }} className='text-xl font-semibold text-center'>MY SKILLS</motion.h2>
+            <h2 className='text-xl font-semibold text-center'>MY SKILLS</h2>
             <div className='flex justify-center items-center flex-wrap gap-14 md:m-14 m-2 mt-20'>
                 {
                     icons.map((ele) => {
