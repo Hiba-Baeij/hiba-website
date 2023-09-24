@@ -2,11 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import "../styles/style.css"
-import PersonalInfo from './components/personalInfo/PersonalInfo'
-import PersonalInfoImage from './components/personalInfo/PersonalInfoImage'
+import PersonalInfo from './components/personal-info/PersonalInfo'
+import PersonalInfoImage from './components/personal-info/PersonalInfoImage'
 import Skills from './components/skills/Skills'
-import Education from './components/experiencesEducation/Education'
-import Experience from './components/experiencesEducation/Experience'
+import Education from './components/experiences-education/Education'
+import Experience from './components/experiences-education/Experience'
 
 export const metadata: Metadata = {
     title: 'About Me',

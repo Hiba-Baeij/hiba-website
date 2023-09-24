@@ -2,8 +2,9 @@
 import ReadMoreText from '@/app/components/ReadMore'
 import { useDriveResolver } from '@/utils/useDriveResolver'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from "framer-motion"
+import FullScreenDialog from './FullScreenDialog'
 
 const works = [
     {
@@ -127,6 +128,15 @@ const works = [
     },
 ]
 export default function FullScreenPortfolio() {
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+    const openDialog = () => {
+        setIsDialogOpen(true);
+    };
+
+    const closeDialog = () => {
+        setIsDialogOpen(false);
+    };
     return (
         <>
             {
@@ -172,6 +182,10 @@ export default function FullScreenPortfolio() {
                                             </div>
 
                                         </div>
+                                        <button onClick={openDialog} className="mt-8 ml-8 p-2 bg-blue-500 text-white rounded">
+                                            Open Fullscreen Dialog
+                                        </button>
+                                        <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
 
                                     </div>
 
@@ -211,6 +225,10 @@ export default function FullScreenPortfolio() {
                                             </div>
 
                                         </div>
+                                        <button onClick={openDialog} className="mt-8 ml-8 p-2 bg-blue-500 text-white rounded">
+                                            Open Fullscreen Dialog
+                                        </button>
+                                        <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
 
                                     </div>
 
