@@ -134,10 +134,20 @@ export default function MobilePortfolio() {
                     return (
 
                         <>
-                            <div className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
+                            <motion.div initial={{ opacity: 0, x: index % 2 == 0 ? -500 : 500 }}
+                                whileInView={{ opacity: 1, x: 0 }} transition={{
+                                    duration: 0.3,
+                                    delay: 0.2,
+                                    ease: [0, 0.71, 0.2, 1.01]
+                                }} className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
                                 <Image alt='work-image' style={{ borderRadius: '15px', border: "4px solid #2c2e2ebe" }} height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
-                            </div>
-                            <div className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
+                            </motion.div>
+                            <motion.div initial={{ opacity: 0, x: index % 2 == 0 ? -500 : 500 }}
+                                whileInView={{ opacity: 1, x: 0 }} transition={{
+                                    duration: 0.3,
+                                    delay: 0.2,
+                                    ease: [0, 0.71, 0.2, 1.01]
+                                }} className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
                                 <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-0'>{
                                     (index + 1).toLocaleString("en-US", {
                                         minimumIntegerDigits: 2,
@@ -165,7 +175,7 @@ export default function MobilePortfolio() {
 
                                 </div>
 
-                            </div>
+                            </motion.div>
 
                         </>
 

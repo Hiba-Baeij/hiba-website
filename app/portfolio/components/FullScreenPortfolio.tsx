@@ -134,7 +134,7 @@ export default function FullScreenPortfolio() {
                     return (
                         index % 2 == 0 ?
                             <>
-                                <motion.div initial={{ opacity: 0, x: -400 }}
+                                <motion.div initial={{ opacity: 0, x: -500 }}
                                     whileInView={{ opacity: 1, x: 0 }} transition={{
                                         duration: 0.3,
                                         delay: 0.2,
@@ -142,7 +142,7 @@ export default function FullScreenPortfolio() {
                                     }} className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
                                     <Image alt='work-image' style={{ borderRadius: '15px', border: "4px solid #2c2e2ebe" }} height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
                                 </motion.div>
-                                <motion.div initial={{ opacity: 0, x: -400 }}
+                                <motion.div initial={{ opacity: 0, x: -500 }}
                                     whileInView={{ opacity: 1, x: 0 }} transition={{
                                         duration: 0.3,
                                         delay: 0.2,
@@ -180,7 +180,7 @@ export default function FullScreenPortfolio() {
                             </>
                             :
                             <>
-                                <motion.div initial={{ opacity: 0, x: 400 }}
+                                <motion.div initial={{ opacity: 0, x: 500 }}
                                     whileInView={{ opacity: 1, x: 0 }} transition={{
                                         duration: 0.3,
                                         delay: 0.5,
@@ -215,7 +215,7 @@ export default function FullScreenPortfolio() {
                                     </div>
 
                                 </motion.div>
-                                <motion.div initial={{ opacity: 0, x: 400 }}
+                                <motion.div initial={{ opacity: 0, x: 500 }}
                                     whileInView={{ opacity: 1, x: 0 }} transition={{
                                         duration: 0.3,
                                         delay: 0.5,
