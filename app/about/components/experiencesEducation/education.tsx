@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 const educations = [
@@ -25,17 +28,41 @@ const educations = [
 export default function education() {
     return (
         <>
-            <h2 className='text-xl font-semibold text-center'>EXPERIENCE & EDUCATION</h2>
+            <motion.h2 initial={{ opacity: 0, y: -400 }}
+                whileInView={{ opacity: 1, y: 0 }} transition={{
+                    duration: 0.3,
+                    delay: 0.4,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }} className='text-xl font-semibold text-center'>EXPERIENCE & EDUCATION</motion.h2>
             {/* EDUCATION */}
             <div className='flex justify-start items-center md:mt-32 mt-10'>
-                <Image className='md:block hidden' width={100} height={200} src="/shapes/rectangular/education.svg" alt="image-head-2" />
+                <motion.div initial={{ opacity: 0, y: -400 }}
+                    whileInView={{ opacity: 1, y: 0 }} transition={{
+                        duration: 0.3,
+                        delay: 0.4,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }}>
+
+                    <Image className='md:block hidden' width={100} height={200} src="/shapes/rectangular/education.svg" alt="image-head-2" />
+                </motion.div>
                 <div className='w-full'>
                     {
                         educations.map((ed, index) => {
                             return (
                                 <div className={index == 1 ? 'flex justify-start items-center w-full my-10' : 'flex justify-start items-center w-full'}>
-                                    <div className={index == 1 ? 'md:block hidden border-2 border-dashed border-white w-[20%]' : 'md:block hidden border-2 border-dashed border-white w-[60%]'}></div>
-                                    <div className='h-[300px] md:py-6 md:pl-6 md:pr-4 p-4 border-2 border-dashed border-white rounded-xl w-[30rem]'>
+                                    <motion.div initial={{ opacity: 0, x: -400 }}
+                                        whileInView={{ opacity: 1, x: 0 }} transition={{
+                                            duration: 0.3,
+                                            delay: 0.8,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className={index == 1 ? 'md:block hidden border-2 border-dashed border-white w-[20%]' : 'md:block hidden border-2 border-dashed border-white w-[60%]'}></motion.div>
+                                    <motion.div initial={{ opacity: 0, x: -400 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            delay: 1,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className='h-[300px] md:py-6 md:pl-6 md:pr-4 p-4 border-2 border-dashed border-white rounded-xl w-[30rem]'>
                                         <div className='flex flex-wrap justify-start items-center mb-3 gap-2'>
                                             <h2 style={{
                                                 background: '-webkit-linear-gradient(45deg, #9B1096 , #FAFF0D)',
@@ -47,7 +74,7 @@ export default function education() {
                                         <article className='h-[200px] overflow-y-scroll'>
                                             <p style={{ lineHeight: 2.8 }} className='tracking-wider'>{ed.text}</p>
                                         </article>
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                             )

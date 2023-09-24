@@ -5,8 +5,8 @@ import "../styles/style.css"
 import PersonalInfo from './components/personalInfo/PersonalInfo'
 import PersonalInfoImage from './components/personalInfo/PersonalInfoImage'
 import Skills from './components/skills/Skills'
-import Education from './components/experiencesEducation/education'
-import Experience from './components/experiencesEducation/experience'
+import Education from './components/experiencesEducation/Education'
+import Experience from './components/experiencesEducation/Experience'
 
 export const metadata: Metadata = {
     title: 'About Me',
@@ -28,7 +28,7 @@ export default function page() {
             <Image className='md:block hidden' style={{ position: 'absolute', top: '-4rem', left: '-4rem' }} width={200} height={200} src="/shapes/circles/circle-small-blue.svg" alt="image-head-6" />
 
             {/* PERSONAL INFOS */}
-            <div className='personal-info mt-20 md:mt-0'>
+            <section className='personal-info mt-20 md:mt-0'>
 
                 <div className='grid grid-cols-2'>
                     <div className='md:col-span-1 col-span-2 md:order-1 order-2 mt-8 md:mt-0'>
@@ -38,26 +38,26 @@ export default function page() {
                         {/* <PersonalInfoImage /> */}
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div className='w-full flex justify-center items-center'>
                 <div className='h-[1px] opacity-5 bg-white w-[30rem] md:mb-20 mb-12 mt-20 md:mt-0'></div>
             </div>
 
             {/* My Skills */}
-            <div>
+            <section>
                 <Skills />
-            </div>
+            </section>
 
             <div className='w-full flex justify-center items-center'>
                 <div className='h-[1px] opacity-5 bg-white w-[30rem] md:my-20 my-12'></div>
             </div>
             {/* EXPERIENCE & EDUCATION */}
-            <div className='mt-10'>
+            <section className='mt-10'>
                 <Education />
                 <Experience />
 
-            </div>
+            </section>
 
         </div >
     )
