@@ -28,12 +28,6 @@ const educations = [
 export default function education() {
     return (
         <>
-            <motion.h2 initial={{ opacity: 0, y: -400 }}
-                whileInView={{ opacity: 1, y: 0 }} transition={{
-                    duration: 0.3,
-                    delay: 0.4,
-                    ease: [0, 0.71, 0.2, 1.01]
-                }} className='text-xl font-semibold text-center'>EXPERIENCE & EDUCATION</motion.h2>
             {/* EDUCATION */}
             <div className='flex justify-start items-center md:mt-32 mt-10'>
                 <motion.div initial={{ opacity: 0, y: -400 }}

@@ -46,6 +46,8 @@ export default function page() {
 
             {/* My Skills */}
             <section>
+                <h2 className='text-xl font-semibold text-center'>MY SKILLS</h2>
+
                 <Skills />
             </section>
 
@@ -54,6 +56,8 @@ export default function page() {
             </div>
             {/* EXPERIENCE & EDUCATION */}
             <section className='mt-10'>
+                <h2 className='text-xl font-semibold text-center'>EXPERIENCE & EDUCATION</h2>
+
                 <Education />
                 <Experience />
 

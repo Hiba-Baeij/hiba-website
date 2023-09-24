@@ -131,7 +131,6 @@ export default function Skills() {
 
     return (
         <>
-            <h2 className='text-xl font-semibold text-center'>MY SKILLS</h2>
             <div className='flex justify-center items-center flex-wrap gap-14 md:m-14 m-2 mt-20'>
                 {
                     icons.map((ele) => {
