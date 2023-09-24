@@ -9,15 +9,15 @@ export default function SectionOne() {
             <motion.h2 initial={{ opacity: 0, y: -350 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                    duration: 0.8,
+                    duration: 0.5,
                     delay: 0.2,
                     ease: [0, 0.71, 0.2, 1.01]
                 }} className='text-xl font-semibold mb-4'>DON'T BE SHY !</motion.h2>
             <motion.p initial={{ opacity: 0, y: -350 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                    duration: 0.8,
-                    delay: 0.5,
+                    duration: 0.5,
+                    delay: 0.4,
                     ease: [0, 0.71, 0.2, 1.01]
                 }}>I am always open to contact me,
                 creative ideas or opportunities to
@@ -30,8 +30,8 @@ export default function SectionOne() {
                     <motion.div initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                            duration: 0.8,
-                            delay: 0.8,
+                            duration: 0.5,
+                            delay: 0.6,
                             ease: [0, 0.71, 0.2, 1.01]
                         }} className='flex justify-start flex-col items-start '>
                         <span>ADDRESS POINT</span>
@@ -42,8 +42,8 @@ export default function SectionOne() {
                     <motion.div initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                            duration: 0.8,
-                            delay: 1.1,
+                            duration: 0.5,
+                            delay: 0.8,
                             ease: [0, 0.71, 0.2, 1.01]
                         }} className='flex justify-start flex-col items-start '>
                         <span>MAIL ME</span>
@@ -53,8 +53,8 @@ export default function SectionOne() {
                     <motion.div initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                            duration: 0.8,
-                            delay: 1.4,
+                            duration: 0.5,
+                            delay: 1,
                             ease: [0, 0.71, 0.2, 1.01]
                         }} className='flex justify-start flex-col items-start '>
                         <span>CALL ME</span>
@@ -66,29 +66,29 @@ export default function SectionOne() {
                     <motion.a initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                            duration: 0.8,
-                            delay: 1.7,
+                            duration: 0.5,
+                            delay: 1.2,
                             ease: [0, 0.71, 0.2, 1.01]
                         }} href='https://www.facebook.com/hiba.be.756/' target='_blank' className='overflow-hidden bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaFacebook size={20} /></motion.a>
                     <motion.a initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                            duration: 0.8,
-                            delay: 2,
+                            duration: 0.5,
+                            delay: 1.4,
                             ease: [0, 0.71, 0.2, 1.01]
                         }} href='https://t.me/Haboosh78' target='_blank' className='bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaTelegram size={20} /></motion.a>
                     <motion.a initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                            duration: 0.8,
-                            delay: 2.3,
+                            duration: 0.5,
+                            delay: 1.6,
                             ease: [0, 0.71, 0.2, 1.01]
                         }} href='https://www.din.com/in/hiba-baeij-59573222b/' target='_blank' className='bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaLinkedin size={20} /></motion.a>
                     <motion.a initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                            duration: 0.8,
-                            delay: 2.6,
+                            duration: 0.5,
+                            delay: 1.8,
                             ease: [0, 0.71, 0.2, 1.01]
                         }} href='https://www.instagram.com/hiba.be.756/' target='_blank' className='bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaInstagram size={20} /></motion.a>
 

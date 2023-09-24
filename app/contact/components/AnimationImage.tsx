@@ -9,7 +9,7 @@ export default function AnimationImage() {
             animate={{ opacity: 1 }}
             transition={{
                 duration: 0.8,
-                delay: 4.5,
+                delay: 3.2,
             }}>
             <Image className='md:block hidden' style={{ position: 'absolute', right: '-1rem', top: '35rem' }} width={120} height={120} src="/shapes/triangles/triangle-pink.svg" alt="image-head-7" />
         </motion.div>
