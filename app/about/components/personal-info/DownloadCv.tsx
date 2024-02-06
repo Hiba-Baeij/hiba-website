@@ -1,5 +1,5 @@
 "use client"
-import PBtn from '@/app/components/PBtn';
+import { Button } from '@nextui-org/react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import { FaDownload } from 'react-icons/fa6';
@@ -34,7 +34,7 @@ export default function AboutBtn() {
         }
     };
     return (
-        <PBtn className='top-4 -left-2' border={<Image src='/shapes/ovals/oval-red.svg' height={97} width={200} alt='border' />} onClick={handleDownloadClick} text='Download CV' icon={<FaDownload size={20} />}></PBtn>
-
+        // <PBtn className='top-4 -left-2' border={<Image src='/shapes/ovals/oval-red.svg' height={97} width={200} alt='border' />} onClick={handleDownloadClick} text='Download CV' icon={<FaDownload size={20} />}></PBtn>
+        <Button onClick={handleDownloadClick} color="secondary" size='md' radius='full' endContent={<FaDownload size={20} />}>Download CV</Button>
     )
 }

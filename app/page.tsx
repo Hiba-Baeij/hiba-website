@@ -1,15 +1,14 @@
 import HeaderOne from './components/page/home/HeaderOne';
 import HeaderTwo from './components/page/home/HeaderTwo';
-import AnimationGroupImage from './components/page/home/AnimationGroupImage';
-import AnimationImage from './components/page/home/AnimationImage';
+
+import StarsField from './components/page/home/StarsField';
 
 export default function Home() {
   return (
-    <main className="home relative overflow-hidden flex justify-center items-center h-screen px-0 md:px-8">
+    <section className="home relative overflow-hidden flex justify-center items-center h-screen">
 
-      <AnimationGroupImage />
-      <div className=' grid grid-cols-2 lg:gap-[12rem] md:gap-3 mt-4'>
-        <div className='md:col-span-1 col-span-2'>
+      <div className='grid grid-cols-2 mt-4 absolute z-30 w-full'>
+        <div className='md:col-span-1 col-span-2 flex justify-center items-center'>
           <HeaderOne />
 
         </div>
@@ -18,7 +17,7 @@ export default function Home() {
 
         </div>
       </div>
-      <AnimationImage />
-    </main>
+      <StarsField />
+    </section>
   )
 }

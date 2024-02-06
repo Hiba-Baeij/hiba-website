@@ -5,6 +5,8 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { motion } from "framer-motion"
 import FullScreenDialog from './FullScreenDialog'
+import { Button } from '@nextui-org/react'
+import { MdRemoveRedEye } from "react-icons/md";
 
 const works = [
     {
@@ -143,106 +145,211 @@ export default function FullScreenPortfolio() {
                 works.map((work, index) => {
                     return (
                         index % 2 == 0 ?
-                            <>
-                                <motion.div initial={{ opacity: 0, x: -500 }}
-                                    whileInView={{ opacity: 1, x: 0 }} transition={{
-                                        duration: 0.3,
-                                        delay: 0.2,
-                                        ease: [0, 0.71, 0.2, 1.01]
-                                    }} className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
-                                    <Image alt='work-image' style={{ borderRadius: '15px', border: "4px solid #2c2e2ebe" }} height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
-                                </motion.div>
-                                <motion.div initial={{ opacity: 0, x: -500 }}
-                                    whileInView={{ opacity: 1, x: 0 }} transition={{
-                                        duration: 0.3,
-                                        delay: 0.2,
-                                        ease: [0, 0.71, 0.2, 1.01]
-                                    }} className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
-                                    <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-0'>{
-                                        (index + 1).toLocaleString("en-US", {
-                                            minimumIntegerDigits: 2,
-                                            useGrouping: false,
-                                        })
-                                    }</h2>
-                                    <h2 className='md:text-4xl text-2xl font-bold'>{work.title}</h2>
-                                    <h2 className='text-lg mt-5 text-grayLight'>{work.type}</h2>
-                                    <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
-                                        <p>{work.text}</p>
-                                        <ReadMoreText text={work.description} />
-                                        <div className='flex justify-start items-center gap-5 flex-wrap'>
+                            <div key={work.title} className='col-span-6'>
+                                <div className='grid grid-cols-6 gap-16'>
 
-                                            <span>build with </span>
-                                            <div className='flex justify-start items-center gap-5'>
+                                    <motion.div initial={{ opacity: 0, x: -500 }}
+                                        whileInView={{ opacity: 1, x: 0 }} transition={{
+                                            duration: 0.3,
+                                            delay: 0.2,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className='md:col-span-3 col-span-6 hover:cursor-pointer h-full w-full'>
+                                        <Image alt='work-image' style={{ borderRadius: '15px', border: "4px solid #2c2e2ebe" }} height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, x: -500 }}
+                                        whileInView={{ opacity: 1, x: 0 }} transition={{
+                                            duration: 0.3,
+                                            delay: 0.2,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className='md:col-span-3 col-span-6 relative bg-zinc-900 rounded-lg h-[347px] overflow-hidden overflow-y-scroll'>
+                                        <div className='p-4 flex justify-start items-center gap-3'>
+                                            <div className='bg-red-500 rounded-full p-1 w-3 h-3'></div>
+                                            <div className='bg-yellow-500 rounded-full p-1 w-3 h-3'></div>
+                                            <div className='bg-green-500 rounded-full p-1 w-3 h-3'></div>
+                                        </div>
+                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-4'>{
+                                            (index + 1).toLocaleString("en-US", {
+                                                minimumIntegerDigits: 2,
+                                                useGrouping: false,
+                                            })
+                                        }</h2>
+                                        {
+                                            work.type === 'Landing Page' ?
+                                                <div className='absolute top-4 right-24'>
+                                                    <Button isIconOnly onClick={openDialog} color="primary" size='md' radius='md'><MdRemoveRedEye size={20} /></Button>
 
-                                                {
-                                                    work.icons.map((icon) =>
-                                                        <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
-                                                    )
-                                                }
+                                                    <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
+                                                </div> : null
+                                        }
+                                        <div className='flex justify-start items-start flex-col p-4'>
+
+                                            <h2 className='md:text-3xl text-xl font-bold'>{work.title}</h2>
+                                            <h2 className='text-md mt-5 text-grayLight font-bold'>{work.type}</h2>
+
+                                            <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
+                                                <p>{work.text}</p>
+                                                <ReadMoreText text={work.description} />
+                                                <div className='flex justify-start items-center gap-5 flex-wrap'>
+                                                    <span>build with </span>
+                                                    <div className='flex justify-start items-center gap-5'>
+                                                        {
+                                                            work.icons.map((icon) =>
+                                                                <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
+                                                            )
+                                                        }
+                                                    </div>
+
+                                                </div>
+
+
                                             </div>
+                                        </div>
+
+
+                                    </motion.div>
+                                    {/* <motion.div initial={{ opacity: 0, x: -500 }}
+                                        whileInView={{ opacity: 1, x: 0 }} transition={{
+                                            duration: 0.3,
+                                            delay: 0.2,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
+                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-0'>{
+                                            (index + 1).toLocaleString("en-US", {
+                                                minimumIntegerDigits: 2,
+                                                useGrouping: false,
+                                            })
+                                        }</h2>
+                                        <h2 className='md:text-4xl text-2xl font-bold'>{work.title}</h2>
+                                        <h2 className='text-lg mt-5 text-grayLight font-bold'>{work.type}</h2>
+                                        <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
+                                            <p>{work.text}</p>
+                                            <ReadMoreText text={work.description} />
+                                            <div className='flex justify-start items-center gap-5 flex-wrap'>
+
+                                                <span>build with </span>
+                                                <div className='flex justify-start items-center gap-5'>
+
+                                                    {
+                                                        work.icons.map((icon) =>
+                                                            <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
+                                                        )
+                                                    }
+                                                </div>
+
+                                            </div>
+                                            <Button onClick={openDialog} color="secondary" size='md' radius='md' endContent={<MdRemoveRedEye size={20} />}>View</Button>
+
+                                            <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
 
                                         </div>
-                                        <button onClick={openDialog} className="mt-8 ml-8 p-2 bg-blue-500 text-white rounded">
-                                            Open Fullscreen Dialog
-                                        </button>
-                                        <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
 
-                                    </div>
+                                    </motion.div> */}
+                                </div>
 
-                                </motion.div>
-
-                            </>
+                            </div>
                             :
-                            <>
-                                <motion.div initial={{ opacity: 0, x: 500 }}
-                                    whileInView={{ opacity: 1, x: 0 }} transition={{
-                                        duration: 0.3,
-                                        delay: 0.5,
-                                        ease: [0, 0.71, 0.2, 1.01]
-                                    }} className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
-                                    <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-6 right-0'>{
-                                        (index + 1).toLocaleString("en-US", {
-                                            minimumIntegerDigits: 2,
-                                            useGrouping: false,
-                                        })
-                                    }</h2>
-                                    <h2 className='md:text-4xl text-2xl font-bold'>{work.title}</h2>
-                                    <h2 className='text-lg mt-5 text-grayLight'>{work.type}</h2>
+                            <div key={work.title} className='col-span-6 '>
+                                <div className='grid grid-cols-6 gap-8'>
+                                    <motion.div initial={{ opacity: 0, x: 500 }}
+                                        whileInView={{ opacity: 1, x: 0 }} transition={{
+                                            duration: 0.3,
+                                            delay: 0.5,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className='md:col-span-3 col-span-6 relative bg-zinc-900 rounded-lg h-[347px] overflow-hidden overflow-y-scroll'>
+                                        <div className='p-4 flex justify-start items-center gap-3'>
+                                            <div className='bg-red-500 rounded-full p-1 w-3 h-3'></div>
+                                            <div className='bg-yellow-500 rounded-full p-1 w-3 h-3'></div>
+                                            <div className='bg-green-500 rounded-full p-1 w-3 h-3'></div>
+                                        </div>
+                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-3 right-4'>{
+                                            (index + 1).toLocaleString("en-US", {
+                                                minimumIntegerDigits: 2,
+                                                useGrouping: false,
+                                            })
+                                        }</h2>
+                                        {
+                                            work.type === 'Landing Page' ?
+                                                <div className='absolute top-4 right-24'>
+                                                    <Button isIconOnly onClick={openDialog} color="primary" size='md' radius='md'><MdRemoveRedEye size={20} /></Button>
 
-                                    <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
-                                        <p>{work.text}</p>
-                                        <ReadMoreText text={work.description} />
-                                        <div className='flex justify-start items-center gap-5 flex-wrap'>
+                                                    <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
+                                                </div> : null
+                                        }
+                                        <div className='flex justify-start items-start flex-col p-4'>
 
-                                            <span>build with </span>
-                                            <div className='flex justify-start items-center gap-5'>
+                                            <h2 className='md:text-3xl text-xl font-bold'>{work.title}</h2>
+                                            <h2 className='text-md mt-5 text-grayLight font-bold'>{work.type}</h2>
 
-                                                {
-                                                    work.icons.map((icon) =>
-                                                        <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
-                                                    )
-                                                }
+                                            <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
+                                                <p>{work.text}</p>
+                                                <ReadMoreText text={work.description} />
+                                                <div className='flex justify-start items-center gap-5 flex-wrap'>
+                                                    <span>build with </span>
+                                                    <div className='flex justify-start items-center gap-5'>
+                                                        {
+                                                            work.icons.map((icon) =>
+                                                                <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
+                                                            )
+                                                        }
+                                                    </div>
+
+                                                </div>
+
+
                                             </div>
+                                        </div>
+
+
+                                    </motion.div>
+                                    {/* <motion.div initial={{ opacity: 0, x: 500 }}
+                                        whileInView={{ opacity: 1, x: 0 }} transition={{
+                                            duration: 0.3,
+                                            delay: 0.5,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className='md:col-span-3 col-span-6 relative flex justify-center items-start flex-col'>
+                                        <h2 className='md:text-5xl text-3xl font-bold opacity-50 text-end absolute top-6 right-0'>{
+                                            (index + 1).toLocaleString("en-US", {
+                                                minimumIntegerDigits: 2,
+                                                useGrouping: false,
+                                            })
+                                        }</h2>
+                                        <h2 className='md:text-4xl text-2xl font-bold'>{work.title}</h2>
+                                        <h2 className='text-lg mt-5 text-grayLight font-bold'>{work.type}</h2>
+
+                                        <div className='flex justify-start items-start flex-col gap-5 mt-4 text-grayLight'>
+                                            <p>{work.text}</p>
+                                            <ReadMoreText text={work.description} />
+                                            <div className='flex justify-start items-center gap-5 flex-wrap'>
+
+                                                <span>build with </span>
+                                                <div className='flex justify-start items-center gap-5'>
+
+                                                    {
+                                                        work.icons.map((icon) =>
+                                                            <img src={icon} alt="" className='h-12 w-12 object-contain hover:scale-125 transition-all cursor-pointer' />
+                                                        )
+                                                    }
+                                                </div>
+
+                                            </div>
+                                            <Button onClick={openDialog} color="primary" size='md' radius='md' endContent={<MdRemoveRedEye size={20} />}>View</Button>
+
+                                            <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
 
                                         </div>
-                                        <button onClick={openDialog} className="mt-8 ml-8 p-2 bg-blue-500 text-white rounded">
-                                            Open Fullscreen Dialog
-                                        </button>
-                                        <FullScreenDialog isOpen={isDialogOpen} onClose={closeDialog} />
 
-                                    </div>
+                                    </motion.div> */}
+                                    <motion.div initial={{ opacity: 0, x: 500 }}
+                                        whileInView={{ opacity: 1, x: 0 }} transition={{
+                                            duration: 0.3,
+                                            delay: 0.5,
+                                            ease: [0, 0.71, 0.2, 1.01]
+                                        }} className='md:col-span-3 col-span-6 hover:cursor-pointer h-full w-full'>
+                                        <Image style={{ objectFit: 'contain', borderRadius: '15px', border: "4px solid #2c2e2ebe" }} alt='work-image' height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
 
-                                </motion.div>
-                                <motion.div initial={{ opacity: 0, x: 500 }}
-                                    whileInView={{ opacity: 1, x: 0 }} transition={{
-                                        duration: 0.3,
-                                        delay: 0.5,
-                                        ease: [0, 0.71, 0.2, 1.01]
-                                    }} className='md:col-span-3 col-span-6 hover:cursor-pointer my-5 h-full w-full'>
-                                    <Image style={{ objectFit: 'contain', borderRadius: '15px', border: "4px solid #2c2e2ebe" }} alt='work-image' height={350} width={600} loader={() => useDriveResolver(work.images[0])} src={useDriveResolver(work.images[0])}></Image>
-
-                                </motion.div>
-                            </>
+                                    </motion.div>
+                                </div>
+                            </div>
 
 
                     )

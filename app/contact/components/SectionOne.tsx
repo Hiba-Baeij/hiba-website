@@ -2,6 +2,7 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTelegram } from 'react-icons/fa6'
 import { motion } from "framer-motion"
+import { BsDiscord } from 'react-icons/bs'
 
 export default function SectionOne() {
     return (
@@ -69,28 +70,35 @@ export default function SectionOne() {
                             duration: 0.5,
                             delay: 1.2,
                             ease: [0, 0.71, 0.2, 1.01]
-                        }} href='https://www.facebook.com/hiba.be.756/' target='_blank' className='overflow-hidden bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaFacebook size={20} /></motion.a>
+                        }} href='https://www.facebook.com/hiba.be.756/' target='_blank' className='overflow-hidden text-gray-300 opacity-80 rounded-full flex justify-center items-center'><FaFacebook size={30} /></motion.a>
                     <motion.a initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
                             duration: 0.5,
                             delay: 1.4,
                             ease: [0, 0.71, 0.2, 1.01]
-                        }} href='https://t.me/Haboosh78' target='_blank' className='bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaTelegram size={20} /></motion.a>
+                        }} href='https://t.me/Haboosh78' target='_blank' className='text-gray-300 opacity-80 rounded-full flex justify-center items-center'><FaTelegram size={30} /></motion.a>
                     <motion.a initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
                             duration: 0.5,
                             delay: 1.6,
                             ease: [0, 0.71, 0.2, 1.01]
-                        }} href='https://www.din.com/in/hiba-baeij-59573222b/' target='_blank' className='bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaLinkedin size={20} /></motion.a>
+                        }} href='https://www.din.com/in/hiba-baeij-59573222b/' target='_blank' className='text-gray-300 opacity-80 rounded-full flex justify-center items-center'><FaLinkedin size={30} /></motion.a>
+                    <motion.a initial={{ opacity: 0, x: -350 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 1.6,
+                            ease: [0, 0.71, 0.2, 1.01]
+                        }} href='https://www.din.com/in/hiba-baeij-59573222b/' target='_blank' className='text-gray-300 opacity-80 rounded-full flex justify-center items-center'><BsDiscord size={30} /></motion.a>
                     <motion.a initial={{ opacity: 0, x: -350 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
                             duration: 0.5,
                             delay: 1.8,
                             ease: [0, 0.71, 0.2, 1.01]
-                        }} href='https://www.instagram.com/hiba.be.756/' target='_blank' className='bg-dark w-12 h-12 rounded-full flex justify-center items-center'><FaInstagram size={20} /></motion.a>
+                        }} href='https://www.instagram.com/hiba.be.756/' target='_blank' className='text-gray-300 opacity-80 rounded-full flex justify-center items-center'><FaInstagram size={30} /></motion.a>
 
                 </div>
             </div>

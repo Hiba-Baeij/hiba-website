@@ -12,7 +12,9 @@ export default function PersonalInfo() {
                     duration: 0.3,
                     delay: 0.5,
                     ease: [0, 0.71, 0.2, 1.01]
-                }} className='text-xl font-semibold'>PERSONAL INFOS</motion.h2>
+                }} className='text-xl font-semibold text-primary'
+
+            >PERSONAL INFOS</motion.h2>
             <div className='flex w-full mt-12 gap-10 mb-10 flex-wrap'>
                 <motion.ul initial={{ opacity: 0, x: -350 }}
                     animate={{ opacity: 1, x: 0 }}

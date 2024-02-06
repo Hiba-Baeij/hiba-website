@@ -4,6 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { FaHouse, FaUser, FaBagShopping, FaMessage, FaMoon, FaTelegram, FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa6";
+import { BsDiscord } from "react-icons/bs";
+import { NavbarContent, NavbarItem, Navbar, Button } from '@nextui-org/react';
+import { IoHeart } from "react-icons/io5";
+import { socialMedia } from '@/data/socialMedia';
 
 const links = [
     {
@@ -35,7 +39,8 @@ const links = [
     }
 
 ];
-export default function Navbar() {
+
+export default function NavbarList() {
     const pathname = usePathname();
     const [isTop, setIsTop] = useState(true);
 
@@ -57,64 +62,38 @@ export default function Navbar() {
         }
     };
     return (
-        <>
-            <div className={isTop ? 'md:flex justify-between items-center hidden fixed right-0 top-2 z-50 ' : 'md:flex justify-between items-center hidden fixed right-0 top-0 z-50 bg-black/70 backdrop-blur-sm border-b border-[#45454598] w-full'}>
+        <Navbar isBordered={!isTop} isBlurred className='bg-transparent fixed w-full'>
+            <NavbarContent justify="start">
+
                 {
-                    isTop ? null : <ul className='flex justify-start items-center gap-10 px-20'>
-                        <li>
-                            <a href='https://www.facebook.com/hiba.be.756/' target='_blank' ><FaFacebook size={20} /></a>
-                        </li>
-                        <li>
-                            <a href='https://t.me/Haboosh78' target='_blank'><FaTelegram size={20} /></a>
-                        </li>
-                        <li>
-                            <a href='https://www.din.com/in/hiba-baeij-59573222b/' target='_blank'><FaLinkedin size={20} /></a>
-                        </li>
-                        <li>
-                            <a href='https://www.instagram.com/hiba.be.756/' target='_blank'><FaInstagram size={20} /></a>
-                        </li>
+                    links.map((link) => (
+                        <NavbarItem key={link.id} isActive={pathname === link.path}>
+                            <Link color="foreground" aria-current="page" href={link.path}>
+                                {link.name}
+                            </Link>
+                        </NavbarItem>
 
-                    </ul>
+                    ))
                 }
-                <ul className='flex justify-end items-center gap-8 py-5 px-20'>
+
+            </NavbarContent>
+            <NavbarContent className="hidden sm:flex gap-4" justify="end">
+                <NavbarItem className="hidden lg:flex text-gray-300 opacity-80">
                     {
-                        links.map((ele) => {
-                            return (
-                                <li key={ele.id} >
-
-                                    <Link href={ele.path}
-                                        style={{ fontWeight: pathname == ele.path ? 'bolder' : 'lighter' }}
-                                    >
-                                        {ele.name}
-                                    </Link>
-
-                                </li>
-                            )
-
-                        })
+                        socialMedia.map((media) => (
+                            <Link key={media.id} href={media.path} className='px-2'><media.icon size={20} /></Link>
+                        ))
                     }
-                </ul>
-            </div>
-            <div className='block md:hidden fixed bottom-0 z-50 bg-black/70 backdrop-blur-sm border-t border-[#45454598]  w-full'>
-                <ul className='flex justify-center items-center gap-12 pb-5 pt-2'>
-                    {
-                        links.map((ele) => {
-                            return (
-                                <li key={ele.id} >
-                                    <div className='rounded mb-3' style={{ borderTop: pathname == ele.path ? '4px solid #EE3E9E' : '' }}></div>
-                                    <Link href={ele.path}>
-                                        <ele.icon size={25} />
-                                    </Link>
-
-                                </li>
-                            )
-
-                        })
-                    }
-                </ul>
-            </div>
-        </>
-
+                </NavbarItem>
+                <NavbarItem className="hidden lg:flex">
+                    <Button className='bg-transparent text-light bg-zinc-800' variant='solid' size='sm' startContent={
+                        <svg aria-hidden="true" focusable="false" height="24" role="presentation" viewBox="0 0 24 24" width="24" className="text-danger"><path d="M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z" fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path></svg>
+                    }>
+                        Thx For visit
+                    </Button>
+                </NavbarItem>
+            </NavbarContent>
+        </Navbar>
 
     )
 }

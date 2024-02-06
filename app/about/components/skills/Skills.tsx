@@ -116,7 +116,13 @@ const icons = [
         icons: '/icons/vuetify.svg',
         title: 'Vuetify',
         delay: 3.6,
-        link: 'https://vuetifyjs.com/en/'
+        link: 'https://vuetifyjs.com/'
+    },
+    {
+        icons: '/icons/next-ui.svg',
+        title: 'Next UI',
+        delay: 3.6,
+        link: 'https://nextui.org/'
     },
     {
         icons: '/icons/vite.webp',
